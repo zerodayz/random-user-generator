@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<p>
+    Generated users
+</p>
+<table class="table table-striped">
+<thead>
+    <!-- {
+        "Name": user.get_full_name(),
+        "Gender": user.get_gender(),
+        "City": user.get_city(),
+        "State": user.get_state(),
+        "Email": user.get_email(),
+        "DOB": user.get_dob(),
+        "Picture": user.get_picture()
+    } -->
+    <tr>
+    <th>Name</th>
+    <th >Gender</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Email</th>
+    <th>DOB</th>
+    <th>Picture</th>
+    </tr>
+</thead>
+<tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.Name }}</td>
+            <td>{{ user.Gender }}</td>
+            <td>{{ user.City }}</td>
+            <td>{{ user.State }}</td>
+            <td>{{ user.Email }}</td>
+            <td>{{ user.DOB }}</td>
+            <td><img src="{{ user.Picture }}"/></td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock %}
